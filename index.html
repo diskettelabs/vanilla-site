@@ -1,0 +1,183 @@
+<!doctype html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1" />
+    <meta name="theme-color" content="#ffffff" />
+    <title>vanilla - local interface for all flavors of AI</title>
+    <meta
+      name="description"
+      content="vanilla is an app for interacting with local and cloud AI models with powerful features and a beautiful look."
+    />
+    <link rel="canonical" href="https://diskettelabs.github.io/vanilla-site/" />
+    <link rel="icon" href="assets/meta/favicon-light.png" media="(prefers-color-scheme: light)" />
+    <link rel="icon" href="assets/meta/favicon-dark.png" media="(prefers-color-scheme: dark)" />
+    <link rel="apple-touch-icon" href="assets/meta/apple-touch-icon.png" />
+    <meta property="og:type" content="website" />
+    <meta property="og:title" content="vanilla - local interface for all flavors of AI" />
+    <meta
+      property="og:description"
+      content="vanilla is an app for interacting with local and cloud AI models with powerful features and a beautiful look."
+    />
+    <meta property="og:url" content="https://diskettelabs.github.io/vanilla-site/" />
+    <meta property="og:image" content="https://diskettelabs.github.io/vanilla-site/assets/meta/og.png" />
+    <meta name="twitter:card" content="summary_large_image" />
+    <meta name="twitter:title" content="vanilla - local interface for all flavors of AI" />
+    <meta
+      name="twitter:description"
+      content="vanilla is an app for interacting with local and cloud AI models with powerful features and a beautiful look."
+    />
+    <meta name="twitter:image" content="https://diskettelabs.github.io/vanilla-site/assets/meta/og.png" />
+    <link rel="stylesheet" href="styles.css" />
+    <script src="script.js" defer></script>
+  </head>
+  <body>
+    <a class="skip-link" href="#main">Skip to content</a>
+
+    <header class="site-header" data-header>
+      <a class="brand" href="#top" aria-label="Vanilla home">
+        <img class="brand-wordmark" src="assets/framer/vanilla-wordmark.svg" alt="vanilla." />
+      </a>
+
+      <button class="menu-toggle" type="button" aria-expanded="false" aria-controls="site-actions" data-menu-toggle>
+        <span></span><span></span><span class="sr-only">Toggle menu</span>
+      </button>
+
+      <nav class="header-actions" id="site-actions" aria-label="Primary" data-menu>
+        <a class="pill pill-light" href="https://github.com/diskettelabs/vanilla" target="_blank" rel="noreferrer">
+          <img src="assets/icons/github.svg" alt="" />
+          <span>view on GitHub</span>
+        </a>
+        <button class="pill pill-dark" type="button" data-waitlist>
+          <img src="assets/icons/waitlist.svg" alt="" />
+          <span>waitlist</span>
+        </button>
+      </nav>
+    </header>
+
+    <main id="main">
+      <section class="hero" id="top" aria-labelledby="hero-title">
+        <div class="hero-inner reveal">
+          <h1 id="hero-title">the local interface for all flavors of AI.</h1>
+          <div class="prompt-card" aria-label="Vanilla prompt interface preview">
+            <p><span class="tiny-orb" aria-hidden="true"></span>chat privately with local and cloud models</p>
+            <div class="prompt-actions">
+              <span><b>＋</b> attach file</span>
+              <span>
+                <svg viewBox="0 0 24 24" aria-hidden="true"><path d="M4 4h6v6H4zM14 4h6v6h-6zM4 14h6v6H4zM14 14h6v6h-6z" /></svg>
+                tools
+              </span>
+              <span>
+                <svg viewBox="0 0 24 24" aria-hidden="true"><path d="M12 3a3 3 0 0 0-3 3v6a3 3 0 0 0 6 0V6a3 3 0 0 0-3-3Zm-7 9a7 7 0 0 0 14 0M12 19v3" fill="none" stroke="currentColor" stroke-linecap="round" stroke-width="1.8" /></svg>
+                dictation
+              </span>
+              <button class="send-button" type="button" aria-label="Send prompt">↑</button>
+            </div>
+          </div>
+        </div>
+      </section>
+
+      <section class="section models" aria-labelledby="models-title">
+        <div class="center-copy reveal">
+          <h2 id="models-title">every flavor of model.</h2>
+          <p>Local through Ollama and LM Studio. Cloud through OpenAI, Anthropic, HuggingFace, and Gemini. Coding CLIs like Aider, Goose, and OpenCode. All unified in one interface.</p>
+        </div>
+        <ul class="model-list reveal" aria-label="Supported model providers and tools">
+          <li><img src="assets/framer/cloud.svg" alt="" />OpenAI</li>
+          <li><img src="assets/framer/server.svg" alt="" />LM Studio</li>
+          <li><img src="assets/framer/cloud.svg" alt="" />HuggingFace</li>
+          <li><img src="assets/framer/cloud.svg" alt="" />Anthropic</li>
+          <li><img src="assets/framer/terminal.svg" alt="" />Aider</li>
+          <li><img src="assets/framer/cloud.svg" alt="" />Gemini</li>
+          <li><img src="assets/framer/terminal.svg" alt="" />OpenCode</li>
+          <li><img src="assets/framer/terminal.svg" alt="" />Goose</li>
+          <li><img src="assets/framer/server.svg" alt="" />Ollama</li>
+        </ul>
+      </section>
+
+      <section class="section features" aria-labelledby="features-title">
+        <h2 id="features-title" class="section-title reveal">built for the way you actually work.</h2>
+        <div class="feature-grid">
+          <article class="feature-card reveal">
+            <img class="feature-icon" src="assets/framer/microphone.svg" alt="" />
+            <h3>Offline voice dictation</h3>
+            <p>Speak instead of type with the lightweight VOSK engine that accelerates AI workflows by letting you speak directly to a model.</p>
+          </article>
+          <article class="feature-card reveal">
+            <img class="feature-icon" src="assets/framer/download.svg" alt="" />
+            <h3>HuggingFace installer</h3>
+            <p>Browse GGUF models on HuggingFace and import them straight into Ollama without touching the command line.</p>
+          </article>
+          <article class="feature-card reveal">
+            <img class="feature-icon" src="assets/framer/file-ocr.svg" alt="" />
+            <h3>Files that models can read</h3>
+            <p>Upload documents and images with built-in OCR and image understanding, so any model can work with what you see.</p>
+          </article>
+          <article class="feature-card reveal">
+            <img class="feature-icon" src="assets/framer/bolt.svg" alt="" />
+            <h3>Real-time streaming</h3>
+            <p>Responses stream token by token from every provider, local or cloud, so you’re never staring at a spinner.</p>
+          </article>
+          <article class="feature-card reveal">
+            <img class="feature-icon" src="assets/framer/sparkles.svg" alt="" />
+            <h3>Smart auto-naming</h3>
+            <p>Chats name themselves as you go. Add custom system prompts per conversation and export everything when you need it.</p>
+          </article>
+          <article class="feature-card reveal">
+            <img class="feature-icon" src="assets/framer/compare.svg" alt="" />
+            <h3>Compare side by side</h3>
+            <p>Run the same prompt across two different models at once and watch both stream in real time.</p>
+          </article>
+        </div>
+      </section>
+
+      <section class="section themes" aria-labelledby="themes-title" data-theme-section>
+        <div class="center-copy reveal">
+          <h2 id="themes-title">pick your theme.</h2>
+          <p>13 different ice cream-themed color schemes, adjustable text sizes, and a wonderfully customizable UI make Vanilla an easy choice.</p>
+          <p>and make your own</p>
+        </div>
+        <div class="swatches reveal" aria-label="Choose a preview color">
+          <button type="button" style="--swatch:#f6cbd6" aria-label="Strawberry" aria-pressed="true"></button>
+          <button type="button" style="--swatch:#d8eaf8" aria-label="Blueberry" aria-pressed="false"></button>
+          <button type="button" style="--swatch:#f5ddb2" aria-label="Caramel" aria-pressed="false"></button>
+          <button type="button" style="--swatch:#f6e8ba" aria-label="Vanilla" aria-pressed="false"></button>
+          <button type="button" style="--swatch:#dfd7f4" aria-label="Ube" aria-pressed="false"></button>
+          <button type="button" style="--swatch:#d3ecd9" aria-label="Pistachio" aria-pressed="false"></button>
+          <button type="button" style="--swatch:#d0e3e7" aria-label="Mint" aria-pressed="false"></button>
+          <button type="button" style="--swatch:#f1cbbd" aria-label="Peach" aria-pressed="false"></button>
+          <button type="button" style="--swatch:#d9d1ca" aria-label="Coffee" aria-pressed="false"></button>
+          <button type="button" style="--swatch:#dbe4c8" aria-label="Matcha" aria-pressed="false"></button>
+          <button type="button" style="--swatch:#ead7ef" aria-label="Taro" aria-pressed="false"></button>
+          <button type="button" style="--swatch:#373330" aria-label="Chocolate" aria-pressed="false"></button>
+          <button type="button" style="--swatch:#eceae5" aria-label="Classic" aria-pressed="false"></button>
+        </div>
+      </section>
+
+      <section class="privacy" aria-labelledby="privacy-title">
+        <div class="privacy-inner reveal">
+          <img class="privacy-icon" src="assets/framer/shield-check.svg" alt="" />
+          <h2 id="privacy-title">your data never leaves your machine.</h2>
+          <p>Everything runs locally by default. Cloud providers are strictly opt-in. You maintain full control over your AI workflow, without sacrificing privacy or flexibility.</p>
+        </div>
+      </section>
+
+      <section class="cta" aria-labelledby="cta-title">
+        <div class="reveal">
+          <h2 id="cta-title">get a scoop.</h2>
+          <div class="cta-actions">
+            <button class="pill pill-dark" type="button" data-waitlist>
+              <img src="assets/icons/waitlist.svg" alt="" />
+              <span>waitlist</span>
+            </button>
+            <a class="pill pill-light" href="https://github.com/diskettelabs/vanilla" target="_blank" rel="noreferrer">
+              <img src="assets/icons/github.svg" alt="" />
+              <span>view on GitHub</span>
+            </a>
+          </div>
+          <p>100% free of charge. runs on your machine.<br />tested on macOS and Linux.</p>
+        </div>
+      </section>
+    </main>
+  </body>
+</html>
