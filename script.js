@@ -56,18 +56,9 @@ const heroStates = [
 const heroFeature = document.querySelector("[data-hero-feature]");
 const heroIcon = document.querySelector("[data-hero-icon]");
 const heroText = document.querySelector("[data-hero-text]");
-const heroProgress = document.querySelector("[data-hero-progress]");
 let heroIndex = 0;
 let heroTimer;
 let transitionTimer;
-
-if (heroProgress) {
-  heroStates.forEach((_, index) => {
-    const marker = document.createElement("span");
-    marker.classList.toggle("is-active", index === 0);
-    heroProgress.append(marker);
-  });
-}
 
 function renderHeroState(index, animate = true) {
   if (!heroFeature || !heroIcon || !heroText) return;
@@ -77,9 +68,6 @@ function renderHeroState(index, animate = true) {
     const [icon, copy] = heroStates[heroIndex];
     heroIcon.src = `assets/framer/hero/${icon}`;
     heroText.textContent = copy;
-    heroProgress?.querySelectorAll("span").forEach((marker, markerIndex) => {
-      marker.classList.toggle("is-active", markerIndex === heroIndex);
-    });
     heroFeature.classList.remove("is-changing");
   };
 
