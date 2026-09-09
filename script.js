@@ -41,16 +41,16 @@ if ("IntersectionObserver" in window && !reduceMotion.matches) {
 }
 
 const heroStates = [
-  ["private-chat.svg", "chat privately with local and cloud models"],
-  ["file-upload.svg", "upload images, PDFs, or code files"],
-  ["models.svg", "use local models or access OpenAI, Claude, and Gemini"],
-  ["voice.svg", "speak instead of type with offline voice recognition"],
-  ["on-device.svg", "conversations are safely stored on-device"],
-  ["theming.svg", "customizable theming and personalization"],
-  ["streaming.svg", "stream responses in real-time"],
+  ["new-chat.svg", "chat privately with local and cloud models"],
+  ["add.svg", "upload images, PDFs, or code files"],
+  ["cloud.svg", "use local models or access OpenAI, Claude, and Gemini"],
+  ["dictate.svg", "speak instead of type with offline voice recognition"],
+  ["local.svg", "conversations are safely stored on-device"],
+  ["settings.svg", "customizable theming and personalization"],
+  ["submit.svg", "stream responses in real-time"],
   ["search.svg", "search across all your conversations"],
-  ["desktop-web.svg", "available as a lightweight desktop and web app"],
-  ["open-source.svg", "completely open source & MIT-licensed"],
+  ["sidebar.svg", "available as a lightweight desktop and web app"],
+  ["scoop-outline.svg", "completely open source & MIT-licensed"],
 ];
 
 const heroFeature = document.querySelector("[data-hero-feature]");
@@ -66,7 +66,7 @@ function renderHeroState(index, animate = true) {
 
   const update = () => {
     const [icon, copy] = heroStates[heroIndex];
-    heroIcon.src = `assets/framer/hero/${icon}`;
+    heroIcon.src = `assets/app/${icon}`;
     heroText.textContent = copy;
     heroFeature.classList.remove("is-changing");
   };

@@ -97,7 +97,7 @@ button {
 .brand-wordmark {
   display: block;
   width: 149px;
-  height: 30px;
+  height: auto;
 }
 
 .header-actions,
@@ -147,6 +147,11 @@ button {
 .pill img {
   width: 16px;
   height: 16px;
+  object-fit: contain;
+}
+
+.pill-dark img {
+  filter: invert(1);
 }
 
 .pill-light {
@@ -244,6 +249,7 @@ button {
   width: 24px;
   height: 24px;
   flex: 0 0 auto;
+  object-fit: contain;
 }
 
 .hero-feature span {
@@ -307,10 +313,18 @@ button {
   margin-left: auto;
   border: 0;
   border-radius: 50%;
-  background: transparent url("assets/framer/hero/send.svg") center / 36px 36px no-repeat;
+  background: #343537;
   font-size: 0;
   cursor: pointer;
   transition: filter 160ms ease;
+}
+
+.send-button img {
+  display: block;
+  width: 17px;
+  height: 19px;
+  margin: auto;
+  filter: invert(1);
 }
 
 .send-button:hover {
@@ -374,6 +388,7 @@ h2 {
 .model-list img {
   width: 14px;
   height: 14px;
+  object-fit: contain;
 }
 
 .features {
@@ -409,6 +424,7 @@ h2 {
   width: 19px;
   height: 19px;
   margin-bottom: 22px;
+  object-fit: contain;
 }
 
 .feature-card h3 {
@@ -733,7 +749,6 @@ h2 {
   .send-button {
     width: 36px;
     height: 36px;
-    background-size: 36px 36px;
   }
 
   .section {
