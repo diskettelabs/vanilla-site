@@ -48,10 +48,10 @@
           <img src="assets/icons/github.svg" alt="" />
           <span>view on GitHub</span>
         </a>
-        <button class="pill pill-dark" type="button" data-waitlist>
+        <a class="pill pill-dark" href="#waitlist">
           <img src="assets/icons/waitlist.svg" alt="" />
           <span>waitlist</span>
-        </button>
+        </a>
       </nav>
     </header>
 
@@ -59,21 +59,25 @@
       <section class="hero" id="top" aria-labelledby="hero-title">
         <div class="hero-inner reveal">
           <h1 id="hero-title">the local interface for all flavors of AI.</h1>
-          <div class="prompt-card" aria-label="Vanilla prompt interface preview">
-            <p><span class="tiny-orb" aria-hidden="true"></span>chat privately with local and cloud models</p>
+          <div class="prompt-card" aria-label="Vanilla feature preview" data-hero-card>
+            <button class="hero-feature" type="button" title="Show next feature" data-hero-feature>
+              <img src="assets/framer/hero/private-chat.svg" alt="" data-hero-icon />
+              <span data-hero-text>chat privately with local and cloud models</span>
+            </button>
             <div class="prompt-actions">
-              <span><b>＋</b> attach file</span>
-              <span>
-                <svg viewBox="0 0 24 24" aria-hidden="true"><path d="M4 4h6v6H4zM14 4h6v6h-6zM4 14h6v6H4zM14 14h6v6h-6z" /></svg>
-                tools
-              </span>
-              <span>
-                <svg viewBox="0 0 24 24" aria-hidden="true"><path d="M12 3a3 3 0 0 0-3 3v6a3 3 0 0 0 6 0V6a3 3 0 0 0-3-3Zm-7 9a7 7 0 0 0 14 0M12 19v3" fill="none" stroke="currentColor" stroke-linecap="round" stroke-width="1.8" /></svg>
-                dictation
-              </span>
-              <button class="send-button" type="button" aria-label="Send prompt">↑</button>
+              <button class="prompt-control prompt-control-attach" type="button" data-hero-jump="1">
+                <img src="assets/framer/hero/plus.svg" alt="" /><span>attach file</span>
+              </button>
+              <button class="prompt-control prompt-control-tools" type="button" data-hero-jump="2">
+                <img src="assets/framer/hero/tools.svg" alt="" /><span>tools</span>
+              </button>
+              <button class="prompt-control prompt-control-dictation" type="button" data-hero-jump="3">
+                <img src="assets/framer/hero/dictation.svg" alt="" /><span>dictation</span>
+              </button>
+              <button class="send-button" type="button" aria-label="Show next feature">next</button>
             </div>
           </div>
+          <div class="hero-progress" aria-hidden="true" data-hero-progress></div>
         </div>
       </section>
 
@@ -162,20 +166,26 @@
         </div>
       </section>
 
-      <section class="cta" aria-labelledby="cta-title">
+      <section class="cta" id="waitlist" aria-labelledby="cta-title">
         <div class="reveal">
           <h2 id="cta-title">get a scoop.</h2>
+          <p class="cta-intro">Join the waitlist for early access and download updates.</p>
+          <form class="waitlist-form" data-waitlist-form>
+            <label class="sr-only" for="waitlist-email">Email address</label>
+            <div class="waitlist-field">
+              <input id="waitlist-email" name="email" type="email" autocomplete="email" inputmode="email" placeholder="you@example.com" required />
+              <button type="submit"><span>join waitlist</span><span aria-hidden="true">→</span></button>
+            </div>
+            <label class="honeypot" aria-hidden="true">Website<input name="website" type="text" tabindex="-1" autocomplete="off" /></label>
+            <p class="waitlist-status" role="status" aria-live="polite" data-waitlist-status></p>
+          </form>
           <div class="cta-actions">
-            <button class="pill pill-dark" type="button" data-waitlist>
-              <img src="assets/icons/waitlist.svg" alt="" />
-              <span>waitlist</span>
-            </button>
             <a class="pill pill-light" href="https://github.com/diskettelabs/vanilla" target="_blank" rel="noreferrer">
               <img src="assets/icons/github.svg" alt="" />
               <span>view on GitHub</span>
             </a>
           </div>
-          <p>100% free of charge. runs on your machine.<br />tested on macOS and Linux.</p>
+          <p class="cta-note">100% free of charge. runs on your machine.<br />tested on macOS and Linux.</p>
         </div>
       </section>
     </main>
