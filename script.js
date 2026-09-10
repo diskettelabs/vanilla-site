@@ -21,36 +21,18 @@ document.addEventListener("keydown", (event) => {
 });
 
 const reduceMotion = window.matchMedia("(prefers-reduced-motion: reduce)");
-const revealItems = document.querySelectorAll(".reveal");
-
-if ("IntersectionObserver" in window && !reduceMotion.matches) {
-  const revealObserver = new IntersectionObserver(
-    (entries, observer) => {
-      entries.forEach((entry) => {
-        if (!entry.isIntersecting) return;
-        entry.target.classList.add("is-visible");
-        observer.unobserve(entry.target);
-      });
-    },
-    { rootMargin: "0px 0px -8%", threshold: 0.08 },
-  );
-
-  revealItems.forEach((item) => revealObserver.observe(item));
-} else {
-  revealItems.forEach((item) => item.classList.add("is-visible"));
-}
 
 const heroStates = [
-  ["new-chat.svg", "chat privately with local and cloud models"],
-  ["add.svg", "upload images, PDFs, or code files"],
-  ["cloud.svg", "use local models or access OpenAI, Claude, and Gemini"],
-  ["dictate.svg", "speak instead of type with offline voice recognition"],
-  ["local.svg", "conversations are safely stored on-device"],
-  ["settings.svg", "customizable theming and personalization"],
-  ["submit.svg", "stream responses in real-time"],
-  ["search.svg", "search across all your conversations"],
-  ["sidebar.svg", "available as a lightweight desktop and web app"],
-  ["scoop-outline.svg", "completely open source & MIT-licensed"],
+  ["assets/framer/hero-chat.svg", "chat privately with local and cloud models"],
+  ["assets/framer/hero-files.svg", "upload images, PDFs, or code files"],
+  ["assets/framer/hero-chip.svg", "use local models or access OpenAI, Claude, and Gemini"],
+  ["assets/framer/hero-mic.svg", "speak instead of type with offline voice recognition"],
+  ["assets/framer/hero-lock.svg", "conversations are safely stored on-device"],
+  ["assets/framer/hero-sliders.svg", "customizable theming and personalization"],
+  ["assets/framer/hero-stream.svg", "stream responses in real-time"],
+  ["assets/framer/hero-search.svg", "search across all your conversations"],
+  ["assets/framer/hero-grid.svg", "available as a lightweight desktop and web app"],
+  ["assets/framer/hero-code.svg", "completely open source & MIT-licensed"],
 ];
 
 const heroFeature = document.querySelector("[data-hero-feature]");
@@ -58,27 +40,20 @@ const heroIcon = document.querySelector("[data-hero-icon]");
 const heroText = document.querySelector("[data-hero-text]");
 let heroIndex = 0;
 let heroTimer;
-let transitionTimer;
 
 function renderHeroState(index, animate = true) {
   if (!heroFeature || !heroIcon || !heroText) return;
   heroIndex = (index + heroStates.length) % heroStates.length;
+  const [icon, copy] = heroStates[heroIndex];
+    heroIcon.src = icon;
+  heroText.textContent = copy;
 
-  const update = () => {
-    const [icon, copy] = heroStates[heroIndex];
-    heroIcon.src = `assets/app/${icon}`;
-    heroText.textContent = copy;
-    heroFeature.classList.remove("is-changing");
-  };
-
-  window.clearTimeout(transitionTimer);
-  if (!animate || reduceMotion.matches) {
-    update();
-    return;
+  if (animate && !reduceMotion.matches) {
+    heroFeature.animate([{ opacity: 0.35 }, { opacity: 1 }], {
+      duration: 240,
+      easing: "ease-out",
+    });
   }
-
-  heroFeature.classList.add("is-changing");
-  transitionTimer = window.setTimeout(update, 240);
 }
 
 function startHeroTimer() {
@@ -129,7 +104,6 @@ waitlistForm?.addEventListener("submit", async (event) => {
       headers: { "Content-Type": "application/json" },
       body: JSON.stringify({
         email: formData.get("email"),
-        website: formData.get("website"),
       }),
     });
     const result = await response.json().catch(() => ({}));

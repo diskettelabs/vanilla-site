@@ -20,7 +20,7 @@
   --hairline: #e1e1df;
   --paper: #fff;
   --preview-accent: #f6cbd6;
-  --content: 992px;
+  --content: 1040px;
 }
 
 * {
@@ -97,7 +97,8 @@ button {
 .brand-wordmark {
   display: block;
   width: 149px;
-  height: auto;
+  height: 30px;
+  object-fit: contain;
 }
 
 .header-actions,
@@ -187,6 +188,8 @@ button {
 .hero {
   display: grid;
   min-height: 100svh;
+  margin-bottom: -100px;
+  overflow: hidden;
   place-items: center;
   padding: 126px 24px 90px;
 }
@@ -194,13 +197,14 @@ button {
 .hero-inner {
   position: relative;
   width: min(538px, 100%);
+  min-width: 0;
   text-align: center;
 }
 
 .hero h1 {
   width: max-content;
   max-width: 100%;
-  margin: 0 auto 37px;
+  margin: 0 auto 36px;
   font-size: 27px;
   font-weight: 400;
   line-height: 1.2;
@@ -211,7 +215,7 @@ button {
   width: 538px;
   max-width: 100%;
   height: 119px;
-  padding: 9px 12px;
+  padding: 8.5px 11px 9.5px;
   border: 1px solid #dbdbda;
   border-radius: 24px;
   background: #fff;
@@ -222,12 +226,12 @@ button {
 .hero-feature {
   display: flex;
   width: 100%;
+  min-width: 0;
   height: 36px;
   margin: 0 0 12px;
-  padding: 0 7px;
+  padding: 12px 0 0;
   align-items: center;
-  gap: 8px;
-  overflow: hidden;
+  overflow: visible;
   border: 0;
   color: #343537;
   background: transparent;
@@ -236,13 +240,20 @@ button {
   line-height: 1.2;
   text-align: left;
   cursor: pointer;
-  transition: opacity 240ms ease, filter 240ms ease, transform 240ms ease;
 }
 
-.hero-feature.is-changing {
-  opacity: 0;
-  filter: blur(4px);
-  transform: translateY(-3px);
+.hero-feature-content {
+  position: relative;
+  left: 50%;
+  display: flex;
+  width: 500px;
+  height: 24px;
+  margin: 0;
+  flex: 0 0 500px;
+  align-items: center;
+  gap: 8px;
+  overflow: hidden;
+  transform: translateX(-50%);
 }
 
 .hero-feature img {
@@ -278,7 +289,7 @@ button {
   background: #fff;
   font-size: 14px;
   font-weight: 500;
-  line-height: 1;
+  line-height: 1.2;
   white-space: nowrap;
   cursor: pointer;
   transition: color 160ms ease, border-color 160ms ease, background-color 160ms ease;
@@ -337,7 +348,7 @@ button {
 }
 
 .models {
-  padding: 100px 0 104px;
+  padding: 120px 0 125.6px;
 }
 
 .center-copy {
@@ -350,12 +361,12 @@ h2 {
   margin: 0;
   font-size: 34px;
   font-weight: 500;
-  letter-spacing: -0.03em;
+  letter-spacing: -0.02em;
   line-height: 1.2;
 }
 
 .center-copy > p {
-  margin: 22px 0 0;
+  margin: 28px 0 0;
   color: var(--soft-ink);
   font-size: 16px;
   line-height: 1.5;
@@ -364,20 +375,20 @@ h2 {
 .model-list {
   display: flex;
   max-width: 690px;
-  margin: 42px auto 0;
+  margin: 36px auto 0;
   padding: 0;
   flex-wrap: wrap;
   justify-content: center;
-  gap: 12px;
+  gap: 8px;
   list-style: none;
 }
 
 .model-list li {
   display: inline-flex;
-  height: 32px;
+  height: 33px;
   align-items: center;
-  gap: 7px;
-  padding: 0 14px;
+  gap: 8px;
+  padding: 0 16px;
   border: 1px solid var(--hairline);
   border-radius: 999px;
   background: #fff;
@@ -392,11 +403,11 @@ h2 {
 }
 
 .features {
-  padding: 84px 0 112px;
+  padding: 40px 0 120px;
 }
 
 .section-title {
-  margin-bottom: 56px;
+  margin-bottom: 40px;
   text-align: center;
 }
 
@@ -407,8 +418,8 @@ h2 {
 }
 
 .feature-card {
-  min-height: 176px;
-  padding: 24px;
+  min-height: 175px;
+  padding: 23px;
   border: 1px solid var(--hairline);
   border-radius: 10px;
   background: #fff;
@@ -421,9 +432,10 @@ h2 {
 }
 
 .feature-icon {
-  width: 19px;
-  height: 19px;
-  margin-bottom: 22px;
+  display: block;
+  width: 20px;
+  height: 20px;
+  margin-bottom: 12px;
   object-fit: contain;
 }
 
@@ -442,7 +454,7 @@ h2 {
 }
 
 .themes {
-  padding: 104px 0 130px;
+  padding: 40px 0 115px;
 }
 
 .themes .center-copy > p:first-of-type {
@@ -455,7 +467,7 @@ h2 {
 
 .swatches {
   display: flex;
-  margin-top: 44px;
+  margin-top: 40px;
   justify-content: center;
   gap: 10px;
 }
@@ -480,8 +492,8 @@ h2 {
 .privacy {
   position: relative;
   display: grid;
-  width: min(calc(100% - 64px), 1280px);
-  min-height: 560px;
+  width: min(calc(100% - 64px), 1200px);
+  min-height: 426px;
   margin: 0 auto;
   place-items: center;
   overflow: hidden;
@@ -489,38 +501,33 @@ h2 {
   background: #000;
 }
 
-.privacy::before {
-  position: absolute;
-  inset: -40%;
-  background: radial-gradient(circle at 50% 50%, color-mix(in srgb, var(--preview-accent) 23%, transparent), transparent 34%);
-  content: "";
-  opacity: 0.2;
-  transition: background 300ms ease;
-}
-
 .privacy-inner {
   position: relative;
   z-index: 1;
-  max-width: 680px;
-  padding: 60px 28px;
+  display: flex;
+  width: 100%;
+  padding: 0 20px;
+  flex-direction: column;
+  align-items: center;
   text-align: center;
 }
 
 .privacy-icon {
-  width: 27px;
-  height: 27px;
-  margin-bottom: 38px;
+  width: 28px;
+  height: 28px;
+  margin-bottom: 20px;
   filter: invert(1);
 }
 
 .privacy h2 {
+  width: min(640px, calc(100vw - 40px));
   font-size: 40px;
   line-height: 1.15;
 }
 
 .privacy p {
-  max-width: 520px;
-  margin: 26px auto 0;
+  width: min(520px, calc(100vw - 40px));
+  margin: 20px auto 0;
   color: rgba(255, 255, 255, 0.6);
   font-size: 16px;
   line-height: 1.5;
@@ -528,26 +535,19 @@ h2 {
 
 .cta {
   display: grid;
-  min-height: 570px;
+  min-height: 400px;
   place-items: start center;
-  padding: 148px 24px 130px;
+  padding: 110px 24px 50px;
   text-align: center;
 }
 
 .cta h2 {
-  margin-bottom: 14px;
+  margin-bottom: 24px;
 }
 
 .cta-actions {
   margin-top: 18px;
   justify-content: center;
-}
-
-.cta-intro {
-  margin: 0 auto 24px;
-  color: rgba(0, 0, 0, 0.52);
-  font-size: 15px;
-  line-height: 1.45;
 }
 
 .waitlist-form {
@@ -558,7 +558,7 @@ h2 {
 
 .waitlist-field {
   display: flex;
-  height: 52px;
+  height: 46px;
   padding: 5px;
   border: 1px solid #d9d9d6;
   border-radius: 999px;
@@ -614,41 +614,25 @@ h2 {
   transform: none;
 }
 
-.honeypot {
-  position: absolute;
-  left: -10000px;
-  width: 1px;
-  height: 1px;
-  overflow: hidden;
-}
-
 .waitlist-status {
-  min-height: 20px;
-  margin: 10px 0 0;
+  margin: 8px 0 0;
   color: rgba(0, 0, 0, 0.6);
   font-size: 13px;
   line-height: 1.4;
+}
+
+.waitlist-status:empty {
+  display: none;
 }
 
 .waitlist-status.is-success { color: #24703e; }
 .waitlist-status.is-error { color: #a52a2a; }
 
 .cta-note {
-  margin: 22px 0 0;
+  margin: 14px 0 0;
   color: rgba(0, 0, 0, 0.45);
   font-size: 13px;
   line-height: 1.25;
-}
-
-.reveal {
-  opacity: 0;
-  transform: translateY(14px);
-  transition: opacity 560ms ease, transform 560ms cubic-bezier(0.2, 0.7, 0.2, 1);
-}
-
-.reveal.is-visible {
-  opacity: 1;
-  transform: none;
 }
 
 @media (max-width: 800px) {
@@ -694,11 +678,12 @@ h2 {
 
   .hero {
     min-height: 680px;
+    margin-bottom: 0;
     padding: 108px 0 80px;
   }
 
   .hero-inner {
-    width: min(538px, calc(100% - 25px));
+    width: min(538px, calc(100% - 40px));
   }
 
   .hero h1 {
@@ -712,41 +697,42 @@ h2 {
   .prompt-card {
     width: 100%;
     height: 119px;
-    padding: 9px 12px;
+    padding: 8.5px 11px 9.5px;
     border-radius: 24px;
   }
 
   .hero-feature {
+    width: 100%;
     height: 36px;
-    padding-inline: 2px;
-    gap: 6px;
-    font-size: 14px;
+    margin-left: 0;
+    padding: 12px 0 0;
+    overflow: visible;
+    font-size: 18px;
   }
 
   .hero-feature img {
-    width: 19px;
-    height: 19px;
+    width: 24px;
+    height: 24px;
   }
 
   .hero-feature span {
-    display: -webkit-box;
-    white-space: normal;
-    -webkit-box-orient: vertical;
-    -webkit-line-clamp: 2;
+    white-space: nowrap;
   }
 
   .prompt-actions {
-    gap: 6px;
+    position: relative;
+    gap: 9px;
   }
 
   .prompt-control {
-    width: auto;
-    height: 32px;
-    padding: 0 9px;
-    font-size: 11px;
+    height: 34px;
+    padding: 0;
+    font-size: 14px;
   }
 
   .send-button {
+    position: absolute;
+    right: -18px;
     width: 36px;
     height: 36px;
   }
@@ -756,11 +742,11 @@ h2 {
   }
 
   .models {
-    padding: 110px 0 86px;
+    padding: 80px 0 79.2px;
   }
 
   h2 {
-    font-size: 30px;
+    font-size: 34px;
   }
 
   .center-copy {
@@ -768,30 +754,32 @@ h2 {
   }
 
   .center-copy > p {
-    margin-top: 18px;
-    font-size: 14px;
-    line-height: 1.55;
+    margin-top: 24px;
+    font-size: 16px;
+    line-height: 1.5;
   }
 
   .model-list {
-    max-width: 360px;
-    margin-top: 35px;
+    max-width: 350px;
+    margin-top: 36px;
     gap: 8px;
   }
 
   .model-list li {
-    height: 29px;
-    padding: 0 11px;
-    font-size: 12px;
+    height: 33px;
+    padding: 0 16px;
+    font-size: 14px;
   }
 
   .features {
-    padding: 92px 0 100px;
+    padding: 32px 0 80px;
   }
 
   .section-title {
-    max-width: 280px;
-    margin: 0 auto 44px;
+    max-width: none;
+    margin: 0 auto 28px;
+    font-size: 28px;
+    line-height: 1.2;
   }
 
   .feature-grid {
@@ -800,16 +788,16 @@ h2 {
   }
 
   .feature-card {
-    min-height: 164px;
-    padding: 22px 20px;
+    min-height: 0;
+    padding: 19px;
   }
 
   .feature-icon {
-    margin-bottom: 19px;
+    margin-bottom: 12px;
   }
 
   .themes {
-    padding: 112px 0 116px;
+    padding: 32px 0 72px;
   }
 
   .themes .center-copy {
@@ -820,6 +808,7 @@ h2 {
     max-width: 340px;
     margin-inline: auto;
     flex-wrap: wrap;
+    margin-top: 40px;
     gap: 10px;
   }
 
@@ -830,39 +819,36 @@ h2 {
 
   .privacy {
     width: 100%;
-    min-height: 500px;
+    min-height: 413.6px;
   }
 
   .privacy-inner {
-    padding-inline: 22px;
+    padding-inline: 20px;
   }
 
   .privacy-icon {
-    margin-bottom: 34px;
+    margin-bottom: 20px;
   }
 
   .privacy h2 {
-    max-width: 340px;
+    max-width: 350px;
     margin-inline: auto;
     font-size: 32px;
   }
 
   .privacy p {
-    max-width: 330px;
-    font-size: 14px;
+    max-width: 350px;
+    font-size: 16px;
+    line-height: 1.5;
   }
 
   .cta {
-    min-height: 600px;
-    padding-top: 130px;
+    min-height: 380px;
+    padding: 80px 20px 48px;
   }
 }
 
 @media (max-width: 390px) {
-  .section {
-    width: calc(100% - 32px);
-  }
-
   .center-copy {
     padding-inline: 4px;
   }
@@ -875,16 +861,6 @@ h2 {
 
   .prompt-actions {
     gap: 4px;
-  }
-
-  .prompt-control {
-    padding-inline: 6px;
-    font-size: 10px;
-  }
-
-  .prompt-control img {
-    width: 12px;
-    height: 12px;
   }
 
   .waitlist-field button {
@@ -907,8 +883,4 @@ h2 {
     animation-iteration-count: 1 !important;
   }
 
-  .reveal {
-    opacity: 1;
-    transform: none;
-  }
 }

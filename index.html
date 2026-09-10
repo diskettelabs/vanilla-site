@@ -61,8 +61,10 @@
           <h1 id="hero-title">the local interface for all flavors of AI.</h1>
           <div class="prompt-card" aria-label="Vanilla feature preview" data-hero-card>
             <button class="hero-feature" type="button" title="Show next feature" data-hero-feature>
-              <img src="assets/app/new-chat.svg" alt="" data-hero-icon />
-              <span data-hero-text>chat privately with local and cloud models</span>
+              <span class="hero-feature-content">
+                <img src="assets/framer/hero-chat.svg" alt="" data-hero-icon />
+                <span data-hero-text>chat privately with local and cloud models</span>
+              </span>
             </button>
             <div class="prompt-actions">
               <button class="prompt-control prompt-control-attach" type="button" data-hero-jump="1">
@@ -86,15 +88,15 @@
           <p>Local through Ollama and LM Studio. Cloud through OpenAI, Anthropic, HuggingFace, and Gemini. Coding CLIs like Aider, Goose, and OpenCode. All unified in one interface.</p>
         </div>
         <ul class="model-list reveal" aria-label="Supported model providers and tools">
-          <li><img src="assets/app/cloud.svg" alt="" />OpenAI</li>
-          <li><img src="assets/app/local.svg" alt="" />LM Studio</li>
-          <li><img src="assets/app/cloud.svg" alt="" />HuggingFace</li>
-          <li><img src="assets/app/cloud.svg" alt="" />Anthropic</li>
-          <li><img src="assets/app/tools.svg" alt="" />Aider</li>
-          <li><img src="assets/app/cloud.svg" alt="" />Gemini</li>
-          <li><img src="assets/app/tools.svg" alt="" />OpenCode</li>
-          <li><img src="assets/app/tools.svg" alt="" />Goose</li>
-          <li><img src="assets/app/local.svg" alt="" />Ollama</li>
+          <li><img src="assets/framer/cloud.svg" alt="" />OpenAI</li>
+          <li><img src="assets/framer/server.svg" alt="" />LM Studio</li>
+          <li><img src="assets/framer/cloud.svg" alt="" />HuggingFace</li>
+          <li><img src="assets/framer/cloud.svg" alt="" />Anthropic</li>
+          <li><img src="assets/framer/terminal.svg" alt="" />Aider</li>
+          <li><img src="assets/framer/cloud.svg" alt="" />Gemini</li>
+          <li><img src="assets/framer/terminal.svg" alt="" />OpenCode</li>
+          <li><img src="assets/framer/terminal.svg" alt="" />Goose</li>
+          <li><img src="assets/framer/server.svg" alt="" />Ollama</li>
         </ul>
       </section>
 
@@ -102,32 +104,32 @@
         <h2 id="features-title" class="section-title reveal">built for the way you actually work.</h2>
         <div class="feature-grid">
           <article class="feature-card reveal">
-            <img class="feature-icon" src="assets/app/dictate.svg" alt="" />
+            <img class="feature-icon" src="assets/framer/microphone.svg" alt="" />
             <h3>Offline voice dictation</h3>
             <p>Speak instead of type with the lightweight VOSK engine that accelerates AI workflows by letting you speak directly to a model.</p>
           </article>
           <article class="feature-card reveal">
-            <img class="feature-icon" src="assets/app/download.svg" alt="" />
+            <img class="feature-icon" src="assets/framer/download.svg" alt="" />
             <h3>HuggingFace installer</h3>
             <p>Browse GGUF models on HuggingFace and import them straight into Ollama without touching the command line.</p>
           </article>
           <article class="feature-card reveal">
-            <img class="feature-icon" src="assets/app/add.svg" alt="" />
+            <img class="feature-icon" src="assets/framer/file-ocr.svg" alt="" />
             <h3>Files that models can read</h3>
             <p>Upload documents and images with built-in OCR and image understanding, so any model can work with what you see.</p>
           </article>
           <article class="feature-card reveal">
-            <img class="feature-icon" src="assets/app/submit.svg" alt="" />
+            <img class="feature-icon" src="assets/framer/bolt.svg" alt="" />
             <h3>Real-time streaming</h3>
             <p>Responses stream token by token from every provider, local or cloud, so you’re never staring at a spinner.</p>
           </article>
           <article class="feature-card reveal">
-            <img class="feature-icon" src="assets/app/autoname.svg" alt="" />
+            <img class="feature-icon" src="assets/framer/sparkles.svg" alt="" />
             <h3>Smart auto-naming</h3>
             <p>Chats name themselves as you go. Add custom system prompts per conversation and export everything when you need it.</p>
           </article>
           <article class="feature-card reveal">
-            <img class="feature-icon" src="assets/app/copy.svg" alt="" />
+            <img class="feature-icon" src="assets/framer/compare.svg" alt="" />
             <h3>Compare side by side</h3>
             <p>Run the same prompt across two different models at once and watch both stream in real time.</p>
           </article>
@@ -168,14 +170,12 @@
       <section class="cta" id="waitlist" aria-labelledby="cta-title">
         <div class="reveal">
           <h2 id="cta-title">get a scoop.</h2>
-          <p class="cta-intro">Join the waitlist for early access and download updates.</p>
           <form class="waitlist-form" data-waitlist-form>
             <label class="sr-only" for="waitlist-email">Email address</label>
             <div class="waitlist-field">
               <input id="waitlist-email" name="email" type="email" autocomplete="email" inputmode="email" placeholder="you@example.com" required />
               <button type="submit"><span>join waitlist</span><span aria-hidden="true">→</span></button>
             </div>
-            <label class="honeypot" aria-hidden="true">Website<input name="website" type="text" tabindex="-1" autocomplete="off" /></label>
             <p class="waitlist-status" role="status" aria-live="polite" data-waitlist-status></p>
           </form>
           <div class="cta-actions">
