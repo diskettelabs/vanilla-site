@@ -21,6 +21,28 @@ document.addEventListener("keydown", (event) => {
 });
 
 const reduceMotion = window.matchMedia("(prefers-reduced-motion: reduce)");
+const waitlistTarget = document.querySelector("#waitlist");
+const waitlistEmail = document.querySelector("#waitlist-email");
+
+document.querySelectorAll("[data-waitlist-link]").forEach((link) => {
+  link.addEventListener("click", (event) => {
+    event.preventDefault();
+
+    menu?.classList.remove("is-open");
+    menuToggle?.setAttribute("aria-expanded", "false");
+
+    waitlistTarget?.scrollIntoView({
+      behavior: reduceMotion.matches ? "auto" : "smooth",
+      block: "start",
+    });
+
+    if (window.location.hash !== "#waitlist") {
+      window.history.pushState(null, "", "#waitlist");
+    }
+
+    waitlistEmail?.focus({ preventScroll: true });
+  });
+});
 
 const heroStates = [
   ["assets/framer/hero-chat.svg", "chat privately with local and cloud models"],
