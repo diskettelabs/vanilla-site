@@ -314,7 +314,7 @@ button {
 .prompt-control-attach { width: 106px; }
 .prompt-control-tools {
   width: 108px;
-  padding-inline: 6px;
+  padding-inline: 10px;
 }
 
 .prompt-control[data-active="true"] {
@@ -558,6 +558,27 @@ h2 {
   gap: 10px;
 }
 
+.theme-selection {
+  display: flex;
+  margin-top: 40px;
+  align-items: baseline;
+  justify-content: center;
+  gap: 8px;
+  color: var(--soft-ink);
+  font-size: 13px;
+  line-height: 1;
+}
+
+.theme-selection span {
+  text-transform: lowercase;
+}
+
+.theme-selection strong {
+  color: var(--ink);
+  font-size: 16px;
+  font-weight: 600;
+}
+
 .swatches button {
   width: 37px;
   height: 37px;
@@ -573,6 +594,10 @@ h2 {
 .swatches button:hover,
 .swatches button[aria-pressed="true"] {
   box-shadow: 0 0 0 3px var(--paper), 0 0 0 4px var(--theme-accent);
+}
+
+.theme-picker .swatches {
+  margin-top: 14px;
 }
 
 html[data-app-theme] body {

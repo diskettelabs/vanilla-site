@@ -102,6 +102,7 @@ const appThemeNames = [
   "mint", "monochrome", "peach", "plum", "raspberry", "strawberry", "vanilla",
 ];
 const themeSwatches = document.querySelector("[data-theme-swatches]");
+const selectedThemeLabel = document.querySelector("[data-selected-theme]");
 
 function applySiteTheme(theme) {
   const colors = theme?.colors;
@@ -121,6 +122,7 @@ function applySiteTheme(theme) {
   root.style.setProperty("--preview-accent", colors.primary || theme.accent || colors.userMessage);
   root.style.setProperty("--theme-accent", theme.accent || colors.primary || colors.text);
   root.style.setProperty("--app-icon-filter", luminance < 150 ? "invert(1)" : "none");
+  if (selectedThemeLabel) selectedThemeLabel.textContent = theme.displayName || theme.name;
   localStorage.setItem("vanilla-site-theme", theme.name);
 }
 
