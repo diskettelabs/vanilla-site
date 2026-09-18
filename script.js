@@ -97,14 +97,121 @@ document.querySelectorAll("[data-hero-jump]").forEach((control) => {
 reduceMotion.addEventListener?.("change", startHeroTimer);
 startHeroTimer();
 
-const swatches = document.querySelectorAll(".swatches button");
+const appThemeNames = [
+  "aurora", "blue-moon", "chocolate", "dragonfruit", "dreamsicle", "lavender", "lemon", "lime",
+  "mint", "monochrome", "peach", "plum", "raspberry", "strawberry", "vanilla",
+];
+const themeSwatches = document.querySelector("[data-theme-swatches]");
 
-swatches.forEach((swatch) => {
-  swatch.addEventListener("click", () => {
-    swatches.forEach((item) => item.setAttribute("aria-pressed", "false"));
-    swatch.setAttribute("aria-pressed", "true");
-    document.documentElement.style.setProperty("--preview-accent", swatch.style.getPropertyValue("--swatch"));
+function applySiteTheme(theme) {
+  const colors = theme?.colors;
+  if (!colors) return;
+  const root = document.documentElement;
+  const background = String(colors.background || "").replace("#", "");
+  const channels = background.length === 6
+    ? [0, 2, 4].map((index) => parseInt(background.slice(index, index + 2), 16))
+    : [255, 255, 255];
+  const luminance = (channels[0] * 299 + channels[1] * 587 + channels[2] * 114) / 1000;
+  root.dataset.appTheme = theme.name;
+  root.style.setProperty("--paper", colors.background);
+  root.style.setProperty("--site-surface", colors.surface || colors.assistantMessage);
+  root.style.setProperty("--ink", colors.text);
+  root.style.setProperty("--soft-ink", `color-mix(in srgb, ${colors.text} 58%, transparent)`);
+  root.style.setProperty("--hairline", colors.border);
+  root.style.setProperty("--preview-accent", colors.primary || theme.accent || colors.userMessage);
+  root.style.setProperty("--theme-accent", theme.accent || colors.primary || colors.text);
+  root.style.setProperty("--app-icon-filter", luminance < 150 ? "invert(1)" : "none");
+  localStorage.setItem("vanilla-site-theme", theme.name);
+}
+
+async function loadSiteThemes() {
+  if (!themeSwatches) return;
+  const themes = await Promise.all(appThemeNames.map(async (name) => {
+    try {
+      const response = await fetch(`themes/${name}.json`);
+      if (!response.ok) throw new Error("Theme unavailable");
+      return response.json();
+    } catch {
+      return null;
+    }
+  }));
+  const availableThemes = themes.filter(Boolean);
+  const activeName = localStorage.getItem("vanilla-site-theme") || "strawberry";
+  themeSwatches.replaceChildren(...availableThemes.map((theme) => {
+    const button = document.createElement("button");
+    button.type = "button";
+    button.style.setProperty("--swatch", theme.accent || theme.colors.primary);
+    button.title = theme.displayName || theme.name;
+    button.setAttribute("aria-label", theme.displayName || theme.name);
+    button.setAttribute("aria-pressed", String(theme.name === activeName));
+    button.addEventListener("click", () => {
+      themeSwatches.querySelectorAll("button").forEach((item) => item.setAttribute("aria-pressed", "false"));
+      button.setAttribute("aria-pressed", "true");
+      applySiteTheme(theme);
+    });
+    return button;
+  }));
+  applySiteTheme(availableThemes.find((theme) => theme.name === activeName) || availableThemes[0]);
+}
+
+loadSiteThemes();
+
+const toolsButton = document.querySelector('[data-omnibar-tool="extensions"]');
+const toolsMenu = document.querySelector("#site-tools-menu");
+const promptCard = document.querySelector(".prompt-card");
+
+function closeToolsMenu() {
+  if (!toolsMenu || !toolsButton) return;
+  toolsMenu.hidden = true;
+  toolsMenu.setAttribute("aria-hidden", "true");
+  toolsButton.setAttribute("aria-expanded", "false");
+}
+
+toolsButton?.addEventListener("click", () => {
+  const expanded = toolsButton.getAttribute("aria-expanded") === "true";
+  toolsMenu.hidden = expanded;
+  toolsMenu.setAttribute("aria-hidden", String(expanded));
+  toolsButton.setAttribute("aria-expanded", String(!expanded));
+});
+
+document.addEventListener("click", (event) => {
+  if (toolsMenu && toolsButton && !toolsMenu.contains(event.target) && !toolsButton.contains(event.target)) closeToolsMenu();
+});
+
+document.querySelectorAll("[data-omnibar-tool]").forEach((control) => {
+  const tool = control.dataset.omnibarTool;
+  if (tool === "extensions" || tool === "submit") return;
+  control.addEventListener("click", () => {
+    if (tool === "attach") {
+      control.dataset.active = "true";
+      control.querySelector("span").textContent = "file attached";
+      window.setTimeout(() => {
+        control.dataset.active = "false";
+        control.querySelector("span").textContent = "attach files";
+      }, 1200);
+      return;
+    }
+    control.dataset.active = String(control.dataset.active !== "true");
+    control.setAttribute("aria-pressed", control.dataset.active);
+    if (tool === "dictation") promptCard?.classList.toggle("is-dictating", control.dataset.active === "true");
   });
+});
+
+const siteSubmitButton = document.querySelector('[data-omnibar-tool="submit"]');
+siteSubmitButton?.addEventListener("click", () => {
+  if (siteSubmitButton.dataset.mode === "stop") {
+    siteSubmitButton.dataset.mode = "submit";
+    siteSubmitButton.title = "Submit";
+    siteSubmitButton.setAttribute("aria-label", "Submit message");
+    siteSubmitButton.querySelector("img").src = "assets/app/arrow-up.svg";
+    return;
+  }
+  siteSubmitButton.dataset.mode = "stop";
+  siteSubmitButton.title = "Stop";
+  siteSubmitButton.setAttribute("aria-label", "Stop response");
+  siteSubmitButton.querySelector("img").src = "assets/app/stop.svg";
+  chooseHeroState(heroIndex + 1);
+  window.setTimeout(() => siteSubmitButton.click(), 900);
 });
 
 const waitlistEndpoint = "https://vanilla-waitlist-675c18d120c6.herokuapp.com/api/waitlist";

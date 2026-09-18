@@ -1,0 +1,17 @@
+{
+  "name": "dreamsicle",
+  "displayName": "Dreamsicle",
+  "description": "Soft cream with a muted tangerine accent",
+  "accent": "#D56D38",
+  "colors": {
+    "primary": "#D56D38",
+    "secondary": "#F3E6DA",
+    "surface": "#FFFDFB",
+    "background": "#FBF6F1",
+    "text": "#312720",
+    "userMessage": "#F2D8C5",
+    "assistantMessage": "#F6ECE3",
+    "border": "#E7D7CB",
+    "statusBar": "#F6ECE3"
+  }
+}

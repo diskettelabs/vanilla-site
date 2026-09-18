@@ -1,0 +1,17 @@
+{
+  "name": "mint",
+  "displayName": "Mint",
+  "description": "Cool mint surfaces with a restrained jade accent",
+  "accent": "#3D876D",
+  "colors": {
+    "primary": "#3D876D",
+    "secondary": "#DFECE6",
+    "surface": "#FBFDFC",
+    "background": "#F2F7F5",
+    "text": "#222B27",
+    "userMessage": "#CFE5DB",
+    "assistantMessage": "#E6EFEB",
+    "border": "#D2DFD9",
+    "statusBar": "#E6EFEB"
+  }
+}

@@ -1,0 +1,17 @@
+{
+  "name": "monochrome",
+  "displayName": "Monochrome",
+  "description": "Near-black surfaces with crisp neutral contrast",
+  "accent": "#A1A1A6",
+  "colors": {
+    "primary": "#A1A1A6",
+    "secondary": "#2A2A2D",
+    "surface": "#202022",
+    "background": "#121214",
+    "text": "#F4F4F5",
+    "userMessage": "#303033",
+    "assistantMessage": "#1A1A1C",
+    "border": "#363639",
+    "statusBar": "#1A1A1C"
+  }
+}

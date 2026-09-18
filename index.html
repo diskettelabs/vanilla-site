@@ -10,8 +10,7 @@
       content="vanilla is an app for interacting with local and cloud AI models with powerful features and a beautiful look."
     />
     <link rel="canonical" href="https://diskettelabs.github.io/vanilla-site/" />
-    <link rel="icon" href="assets/meta/favicon-light.png" media="(prefers-color-scheme: light)" />
-    <link rel="icon" href="assets/meta/favicon-dark.png" media="(prefers-color-scheme: dark)" />
+    <link rel="icon" type="image/svg+xml" href="assets/app/scoop-outline.svg" />
     <link rel="apple-touch-icon" href="assets/meta/apple-touch-icon.png" />
     <meta property="og:type" content="website" />
     <meta property="og:title" content="vanilla - local interface for all flavors of AI" />
@@ -29,7 +28,7 @@
     />
     <meta name="twitter:image" content="https://diskettelabs.github.io/vanilla-site/assets/meta/og.png" />
     <link rel="stylesheet" href="styles.css" />
-    <script src="script.js?v=2" defer></script>
+    <script src="script.js?v=3" defer></script>
   </head>
   <body>
     <a class="skip-link" href="#main">Skip to content</a>
@@ -44,10 +43,6 @@
       </button>
 
       <nav class="header-actions" id="site-actions" aria-label="Primary" data-menu>
-        <a class="pill pill-light" href="https://github.com/diskettelabs/vanilla" target="_blank" rel="noreferrer">
-          <img src="assets/icons/github.svg" alt="" />
-          <span>view on GitHub</span>
-        </a>
         <a class="pill pill-dark" href="#waitlist" data-waitlist-link>
           <img src="assets/app/scoop-outline.svg" alt="" />
           <span>waitlist</span>
@@ -67,16 +62,20 @@
               </span>
             </button>
             <div class="prompt-actions">
-              <button class="prompt-control prompt-control-attach" type="button" data-hero-jump="1">
-                <img src="assets/app/add.svg" alt="" /><span>attach file</span>
+              <button class="prompt-control prompt-control-attach" type="button" data-omnibar-tool="attach">
+                <img src="assets/app/paperclip.svg" alt="" /><span>attach files</span>
               </button>
-              <button class="prompt-control prompt-control-tools" type="button" data-hero-jump="2">
-                <img src="assets/app/tools.svg" alt="" /><span>tools</span>
+              <button class="prompt-control prompt-control-tools" type="button" data-omnibar-tool="extensions" aria-expanded="false" aria-controls="site-tools-menu">
+                <img src="assets/app/tools.svg" alt="" /><span>extensions</span>
+                <img class="tools-chevron" src="assets/app/chevron-right.svg" alt="" />
               </button>
-              <button class="prompt-control prompt-control-dictation" type="button" data-hero-jump="3">
-                <img src="assets/app/dictate.svg" alt="" /><span>dictation</span>
-              </button>
-              <button class="send-button" type="button" aria-label="Show next feature"><img src="assets/app/submit.svg" alt="" /></button>
+              <div class="site-tools-menu" id="site-tools-menu" aria-hidden="true" hidden>
+                <button class="prompt-control" type="button" data-omnibar-tool="tools"><img src="assets/app/wrench.svg" alt="" /><span>tools</span></button>
+                <button class="prompt-control" type="button" data-omnibar-tool="compare"><img src="assets/app/columns.svg" alt="" /><span>compare</span></button>
+                <button class="prompt-control" type="button" data-omnibar-tool="search"><img src="assets/app/search.svg" alt="" /><span>search</span></button>
+                <button class="prompt-control" type="button" data-omnibar-tool="prompt"><img src="assets/app/pencil-line.svg" alt="" /><span>prompt</span></button>
+              </div>
+              <button class="send-button" type="button" data-omnibar-tool="submit" aria-label="Submit message" title="Submit"><img src="assets/app/arrow-up.svg" alt="" /></button>
             </div>
           </div>
         </div>
@@ -139,24 +138,10 @@
       <section class="section themes" aria-labelledby="themes-title" data-theme-section>
         <div class="center-copy reveal">
           <h2 id="themes-title">pick your theme.</h2>
-          <p>13 different ice cream-themed color schemes, adjustable text sizes, and a wonderfully customizable UI make Vanilla an easy choice.</p>
+          <p>15 different ice cream-themed color schemes, adjustable text sizes, and a wonderfully customizable UI make Vanilla an easy choice.</p>
           <p>and make your own</p>
         </div>
-        <div class="swatches reveal" aria-label="Choose a preview color">
-          <button type="button" style="--swatch:#f6cbd6" aria-label="Strawberry" aria-pressed="true"></button>
-          <button type="button" style="--swatch:#d8eaf8" aria-label="Blueberry" aria-pressed="false"></button>
-          <button type="button" style="--swatch:#f5ddb2" aria-label="Caramel" aria-pressed="false"></button>
-          <button type="button" style="--swatch:#f6e8ba" aria-label="Vanilla" aria-pressed="false"></button>
-          <button type="button" style="--swatch:#dfd7f4" aria-label="Ube" aria-pressed="false"></button>
-          <button type="button" style="--swatch:#d3ecd9" aria-label="Pistachio" aria-pressed="false"></button>
-          <button type="button" style="--swatch:#d0e3e7" aria-label="Mint" aria-pressed="false"></button>
-          <button type="button" style="--swatch:#f1cbbd" aria-label="Peach" aria-pressed="false"></button>
-          <button type="button" style="--swatch:#d9d1ca" aria-label="Coffee" aria-pressed="false"></button>
-          <button type="button" style="--swatch:#dbe4c8" aria-label="Matcha" aria-pressed="false"></button>
-          <button type="button" style="--swatch:#ead7ef" aria-label="Taro" aria-pressed="false"></button>
-          <button type="button" style="--swatch:#373330" aria-label="Chocolate" aria-pressed="false"></button>
-          <button type="button" style="--swatch:#eceae5" aria-label="Classic" aria-pressed="false"></button>
-        </div>
+        <div class="swatches reveal" aria-label="Choose a preview theme" data-theme-swatches></div>
       </section>
 
       <section class="privacy" aria-labelledby="privacy-title">
@@ -178,12 +163,6 @@
             </div>
             <p class="waitlist-status" role="status" aria-live="polite" data-waitlist-status></p>
           </form>
-          <div class="cta-actions">
-            <a class="pill pill-light" href="https://github.com/diskettelabs/vanilla" target="_blank" rel="noreferrer">
-              <img src="assets/icons/github.svg" alt="" />
-              <span>view on GitHub</span>
-            </a>
-          </div>
           <p class="cta-note">100% free of charge. runs on your machine.<br />tested on macOS and Linux.</p>
         </div>
       </section>

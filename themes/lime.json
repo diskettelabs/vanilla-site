@@ -1,0 +1,17 @@
+{
+  "name": "lime",
+  "displayName": "Lime",
+  "description": "Fresh leaf green on quiet natural neutrals",
+  "accent": "#5F934D",
+  "colors": {
+    "primary": "#5F934D",
+    "secondary": "#E4EEDF",
+    "surface": "#FCFEFB",
+    "background": "#F5F8F3",
+    "text": "#252C22",
+    "userMessage": "#D8E9CF",
+    "assistantMessage": "#EAF1E6",
+    "border": "#D5E0D0",
+    "statusBar": "#EAF1E6"
+  }
+}

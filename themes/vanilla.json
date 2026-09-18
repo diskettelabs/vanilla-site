@@ -1,0 +1,17 @@
+{
+  "name": "vanilla",
+  "displayName": "Vanilla",
+  "description": "Warm paper, soft cream, and restrained caramel",
+  "accent": "#8A6845",
+  "colors": {
+    "primary": "#8A6845",
+    "secondary": "#EBE7DE",
+    "surface": "#FFFDF8",
+    "background": "#F7F5EF",
+    "text": "#28251F",
+    "userMessage": "#E9DFCF",
+    "assistantMessage": "#F0EDE6",
+    "border": "#DCD7CD",
+    "statusBar": "#F0EDE6"
+  }
+}

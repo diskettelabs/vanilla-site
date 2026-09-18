@@ -1,0 +1,17 @@
+{
+  "name": "raspberry",
+  "displayName": "Raspberry",
+  "description": "Muted rose neutrals with a deep raspberry accent",
+  "accent": "#A63F63",
+  "colors": {
+    "primary": "#A63F63",
+    "secondary": "#EEE1E6",
+    "surface": "#FFFDFE",
+    "background": "#FAF5F7",
+    "text": "#30242A",
+    "userMessage": "#EBCFDA",
+    "assistantMessage": "#F2E7EB",
+    "border": "#E1D1D8",
+    "statusBar": "#F2E7EB"
+  }
+}

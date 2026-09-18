@@ -1,0 +1,17 @@
+{
+  "name": "chocolate",
+  "displayName": "Chocolate",
+  "description": "Dark cocoa neutrals with a warm copper accent",
+  "accent": "#D69A6D",
+  "colors": {
+    "primary": "#D69A6D",
+    "secondary": "#312A26",
+    "surface": "#29231F",
+    "background": "#1C1816",
+    "text": "#F4ECE6",
+    "userMessage": "#49372D",
+    "assistantMessage": "#24201D",
+    "border": "#3E342E",
+    "statusBar": "#24201D"
+  }
+}

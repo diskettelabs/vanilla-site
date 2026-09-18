@@ -1,0 +1,21 @@
+{
+  "name": "aurora",
+  "displayName": "Aurora",
+  "description": "Deep blue-black surfaces with a quiet cyan accent",
+  "version": "1.0.0",
+  "author": "Vanilla",
+  "accent": "#5CC8D7",
+  "greeting": "Ask the night sky anything.",
+  "placeholder": "shoot for the stars…",
+  "colors": {
+    "primary": "#5CC8D7",
+    "secondary": "#222933",
+    "surface": "#1B222B",
+    "background": "#10151B",
+    "text": "#EDF3F5",
+    "userMessage": "#263844",
+    "assistantMessage": "#171D24",
+    "border": "#2B3540",
+    "statusBar": "#171D24"
+  }
+}

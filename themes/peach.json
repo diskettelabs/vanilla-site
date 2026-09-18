@@ -1,0 +1,17 @@
+{
+  "name": "peach",
+  "displayName": "Peach",
+  "description": "Pale peach neutrals with a soft coral accent",
+  "accent": "#C66C59",
+  "colors": {
+    "primary": "#C66C59",
+    "secondary": "#F2E4DE",
+    "surface": "#FFFDFB",
+    "background": "#FBF5F2",
+    "text": "#302622",
+    "userMessage": "#EFD8CF",
+    "assistantMessage": "#F5EAE5",
+    "border": "#E5D5CE",
+    "statusBar": "#F5EAE5"
+  }
+}

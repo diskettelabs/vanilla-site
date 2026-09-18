@@ -1,0 +1,17 @@
+{
+  "name": "blue-moon",
+  "displayName": "Blue Moon",
+  "description": "Cool daylight neutrals with a calm blue accent",
+  "accent": "#4F7EAE",
+  "colors": {
+    "primary": "#4F7EAE",
+    "secondary": "#E5EDF5",
+    "surface": "#FCFDFE",
+    "background": "#F3F7FA",
+    "text": "#202830",
+    "userMessage": "#D8E7F3",
+    "assistantMessage": "#EAF1F6",
+    "border": "#D2DCE5",
+    "statusBar": "#EAF1F6"
+  }
+}
