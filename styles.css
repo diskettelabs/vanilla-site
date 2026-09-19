@@ -105,8 +105,8 @@ button {
 
 .brand-wordmark {
   display: block;
-  width: 149px;
   height: 30px;
+  width: auto;
   object-fit: contain;
 }
 
