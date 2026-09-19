@@ -1,177 +1,191 @@
 <!doctype html>
 <html lang="en">
-  <head>
-    <meta charset="UTF-8" />
-    <meta name="viewport" content="width=device-width, initial-scale=1" />
-    <meta name="theme-color" content="#ffffff" />
-    <title>vanilla - local interface for all flavors of AI</title>
-    <meta
-      name="description"
-      content="vanilla is an app for interacting with local and cloud AI models with powerful features and a beautiful look."
-    />
-    <link rel="canonical" href="https://diskettelabs.github.io/vanilla-site/" />
-    <link rel="icon" type="image/svg+xml" href="assets/app/scoop-outline.svg" />
-    <link rel="apple-touch-icon" href="assets/meta/apple-touch-icon.png" />
-    <meta property="og:type" content="website" />
-    <meta property="og:title" content="vanilla - local interface for all flavors of AI" />
-    <meta
-      property="og:description"
-      content="vanilla is an app for interacting with local and cloud AI models with powerful features and a beautiful look."
-    />
-    <meta property="og:url" content="https://diskettelabs.github.io/vanilla-site/" />
-    <meta property="og:image" content="https://diskettelabs.github.io/vanilla-site/assets/meta/og.png" />
-    <meta name="twitter:card" content="summary_large_image" />
-    <meta name="twitter:title" content="vanilla - local interface for all flavors of AI" />
-    <meta
-      name="twitter:description"
-      content="vanilla is an app for interacting with local and cloud AI models with powerful features and a beautiful look."
-    />
-    <meta name="twitter:image" content="https://diskettelabs.github.io/vanilla-site/assets/meta/og.png" />
-    <link rel="stylesheet" href="styles.css" />
-    <script src="script.js?v=3" defer></script>
-  </head>
-  <body>
-    <a class="skip-link" href="#main">Skip to content</a>
 
-    <header class="site-header" data-header>
-      <a class="brand" href="#top" aria-label="Vanilla home">
-        <img class="brand-wordmark" src="assets/app/vanilla-logomark.svg" alt="vanilla." />
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1" />
+  <meta name="theme-color" content="#ffffff" />
+  <title>vanilla - local interface for all flavors of AI</title>
+  <meta name="description"
+    content="vanilla is an app for interacting with local and cloud AI models with powerful features and a beautiful look." />
+  <link rel="canonical" href="https://diskettelabs.github.io/vanilla-site/" />
+  <link rel="icon" type="image/svg+xml" href="assets/app/scoop-outline.svg" />
+  <link rel="apple-touch-icon" href="assets/meta/apple-touch-icon.png" />
+  <meta property="og:type" content="website" />
+  <meta property="og:title" content="vanilla - local interface for all flavors of AI" />
+  <meta property="og:description"
+    content="vanilla is an app for interacting with local and cloud AI models with powerful features and a beautiful look." />
+  <meta property="og:url" content="https://diskettelabs.github.io/vanilla-site/" />
+  <meta property="og:image" content="https://diskettelabs.github.io/vanilla-site/assets/meta/og.png" />
+  <meta name="twitter:card" content="summary_large_image" />
+  <meta name="twitter:title" content="vanilla - local interface for all flavors of AI" />
+  <meta name="twitter:description"
+    content="vanilla is an app for interacting with local and cloud AI models with powerful features and a beautiful look." />
+  <meta name="twitter:image" content="https://diskettelabs.github.io/vanilla-site/assets/meta/og.png" />
+  <link rel="stylesheet" href="styles.css" />
+  <script src="script.js?v=3" defer></script>
+</head>
+
+<body>
+  <a class="skip-link" href="#main">Skip to content</a>
+
+  <header class="site-header" data-header>
+    <a class="brand" href="#top" aria-label="Vanilla home">
+      <img class="brand-wordmark" src="assets/app/vanilla-logomark.svg" alt="vanilla." />
+    </a>
+
+    <button class="menu-toggle" type="button" aria-expanded="false" aria-controls="site-actions" data-menu-toggle>
+      <span></span><span></span><span class="sr-only">Toggle menu</span>
+    </button>
+
+    <nav class="header-actions" id="site-actions" aria-label="Primary" data-menu>
+      <a class="pill pill-dark" href="#waitlist" data-waitlist-link>
+        <img src="assets/app/scoop-outline.svg" alt="" />
+        <span>waitlist</span>
       </a>
+    </nav>
+  </header>
 
-      <button class="menu-toggle" type="button" aria-expanded="false" aria-controls="site-actions" data-menu-toggle>
-        <span></span><span></span><span class="sr-only">Toggle menu</span>
-      </button>
-
-      <nav class="header-actions" id="site-actions" aria-label="Primary" data-menu>
-        <a class="pill pill-dark" href="#waitlist" data-waitlist-link>
-          <img src="assets/app/scoop-outline.svg" alt="" />
-          <span>waitlist</span>
-        </a>
-      </nav>
-    </header>
-
-    <main id="main">
-      <section class="hero" id="top" aria-labelledby="hero-title">
-        <div class="hero-inner reveal">
-          <h1 id="hero-title">the local interface for all flavors of AI.</h1>
-          <div class="prompt-card" aria-label="Vanilla feature preview" data-hero-card>
-            <button class="hero-feature" type="button" title="Show next feature" data-hero-feature>
-              <span class="hero-feature-content">
-                <img src="assets/framer/hero-chat.svg" alt="" data-hero-icon />
-                <span data-hero-text>chat privately with local and cloud models</span>
-              </span>
+  <main id="main">
+    <section class="hero" id="top" aria-labelledby="hero-title">
+      <div class="hero-inner reveal">
+        <h1 id="hero-title">the local interface for all flavors of AI.</h1>
+        <div class="prompt-card" aria-label="Vanilla feature preview" data-hero-card>
+          <button class="hero-feature" type="button" title="Show next feature" data-hero-feature>
+            <span class="hero-feature-content">
+              <img src="assets/framer/hero-chat.svg" alt="" data-hero-icon />
+              <span data-hero-text>chat privately with local and cloud models</span>
+            </span>
+          </button>
+          <div class="prompt-actions">
+            <button class="prompt-control prompt-control-attach" type="button" data-omnibar-tool="attach">
+              <img src="assets/app/paperclip.svg" alt="" /><span>attach files</span>
             </button>
-            <div class="prompt-actions">
-              <button class="prompt-control prompt-control-attach" type="button" data-omnibar-tool="attach">
-                <img src="assets/app/paperclip.svg" alt="" /><span>attach files</span>
-              </button>
-              <button class="prompt-control prompt-control-tools" type="button" data-omnibar-tool="extensions" aria-expanded="false" aria-controls="site-tools-menu">
+            <button class="prompt-control prompt-control-tools" type="button" data-omnibar-tool="extensions"
+              aria-expanded="false" aria-controls="site-tools-menu">
+              <div class="tools-chevron-container">
                 <img src="assets/app/tools.svg" alt="" /><span>extensions</span>
                 <img class="tools-chevron" src="assets/app/chevron-right.svg" alt="" />
-              </button>
-              <div class="site-tools-menu" id="site-tools-menu" aria-hidden="true" hidden>
-                <button class="prompt-control" type="button" data-omnibar-tool="tools"><img src="assets/app/wrench.svg" alt="" /><span>tools</span></button>
-                <button class="prompt-control" type="button" data-omnibar-tool="compare"><img src="assets/app/columns.svg" alt="" /><span>compare</span></button>
-                <button class="prompt-control" type="button" data-omnibar-tool="search"><img src="assets/app/search.svg" alt="" /><span>search</span></button>
-                <button class="prompt-control" type="button" data-omnibar-tool="prompt"><img src="assets/app/pencil-line.svg" alt="" /><span>prompt</span></button>
               </div>
-              <button class="send-button" type="button" data-omnibar-tool="submit" aria-label="Submit message" title="Submit"><img src="assets/app/arrow-up.svg" alt="" /></button>
+            </button>
+            <div class="site-tools-menu" id="site-tools-menu" aria-hidden="true" hidden>
+              <button class="prompt-control" type="button" data-omnibar-tool="tools"><img src="assets/app/wrench.svg"
+                  alt="" /><span>tools</span></button>
+              <button class="prompt-control" type="button" data-omnibar-tool="compare"><img src="assets/app/columns.svg"
+                  alt="" /><span>compare</span></button>
+              <button class="prompt-control" type="button" data-omnibar-tool="search"><img src="assets/app/search.svg"
+                  alt="" /><span>search</span></button>
+              <button class="prompt-control" type="button" data-omnibar-tool="prompt"><img
+                  src="assets/app/pencil-line.svg" alt="" /><span>prompt</span></button>
             </div>
+            <button class="send-button" type="button" data-omnibar-tool="submit" aria-label="Submit message"
+              title="Submit"><img src="assets/app/arrow-up.svg" alt="" /></button>
           </div>
         </div>
-      </section>
+      </div>
+    </section>
 
-      <section class="section models" aria-labelledby="models-title">
-        <div class="center-copy reveal">
-          <h2 id="models-title">every flavor of model.</h2>
-          <p>Local through Ollama and LM Studio. Cloud through OpenAI, Anthropic, HuggingFace, and Gemini. Coding CLIs like Aider, Goose, and OpenCode. All unified in one interface.</p>
-        </div>
-        <ul class="model-list reveal" aria-label="Supported model providers and tools">
-          <li><img src="assets/framer/cloud.svg" alt="" />OpenAI</li>
-          <li><img src="assets/framer/server.svg" alt="" />LM Studio</li>
-          <li><img src="assets/framer/cloud.svg" alt="" />HuggingFace</li>
-          <li><img src="assets/framer/cloud.svg" alt="" />Anthropic</li>
-          <li><img src="assets/framer/terminal.svg" alt="" />Aider</li>
-          <li><img src="assets/framer/cloud.svg" alt="" />Gemini</li>
-          <li><img src="assets/framer/terminal.svg" alt="" />OpenCode</li>
-          <li><img src="assets/framer/terminal.svg" alt="" />Goose</li>
-          <li><img src="assets/framer/server.svg" alt="" />Ollama</li>
-        </ul>
-      </section>
+    <section class="section models" aria-labelledby="models-title">
+      <div class="center-copy reveal">
+        <h2 id="models-title">every flavor of model.</h2>
+        <p>Local through Ollama and LM Studio. Cloud through OpenAI, Anthropic, HuggingFace, and Gemini. Coding CLIs
+          like Aider, Goose, and OpenCode. All unified in one interface.</p>
+      </div>
+      <ul class="model-list reveal" aria-label="Supported model providers and tools">
+        <li><img src="assets/framer/cloud.svg" alt="" />OpenAI</li>
+        <li><img src="assets/framer/server.svg" alt="" />LM Studio</li>
+        <li><img src="assets/framer/cloud.svg" alt="" />HuggingFace</li>
+        <li><img src="assets/framer/cloud.svg" alt="" />Anthropic</li>
+        <li><img src="assets/framer/terminal.svg" alt="" />Aider</li>
+        <li><img src="assets/framer/cloud.svg" alt="" />Gemini</li>
+        <li><img src="assets/framer/terminal.svg" alt="" />OpenCode</li>
+        <li><img src="assets/framer/terminal.svg" alt="" />Goose</li>
+        <li><img src="assets/framer/server.svg" alt="" />Ollama</li>
+      </ul>
+    </section>
 
-      <section class="section features" aria-labelledby="features-title">
-        <h2 id="features-title" class="section-title reveal">built for the way you actually work.</h2>
-        <div class="feature-grid">
-          <article class="feature-card reveal">
-            <img class="feature-icon" src="assets/framer/microphone.svg" alt="" />
-            <h3>Offline voice dictation</h3>
-            <p>Speak instead of type with the lightweight VOSK engine that accelerates AI workflows by letting you speak directly to a model.</p>
-          </article>
-          <article class="feature-card reveal">
-            <img class="feature-icon" src="assets/framer/download.svg" alt="" />
-            <h3>HuggingFace installer</h3>
-            <p>Browse GGUF models on HuggingFace and import them straight into Ollama without touching the command line.</p>
-          </article>
-          <article class="feature-card reveal">
-            <img class="feature-icon" src="assets/framer/file-ocr.svg" alt="" />
-            <h3>Files that models can read</h3>
-            <p>Upload documents and images with built-in OCR and image understanding, so any model can work with what you see.</p>
-          </article>
-          <article class="feature-card reveal">
-            <img class="feature-icon" src="assets/framer/bolt.svg" alt="" />
-            <h3>Real-time streaming</h3>
-            <p>Responses stream token by token from every provider, local or cloud, so you’re never staring at a spinner.</p>
-          </article>
-          <article class="feature-card reveal">
-            <img class="feature-icon" src="assets/framer/sparkles.svg" alt="" />
-            <h3>Smart auto-naming</h3>
-            <p>Chats name themselves as you go. Add custom system prompts per conversation and export everything when you need it.</p>
-          </article>
-          <article class="feature-card reveal">
-            <img class="feature-icon" src="assets/framer/compare.svg" alt="" />
-            <h3>Compare side by side</h3>
-            <p>Run the same prompt across two different models at once and watch both stream in real time.</p>
-          </article>
-        </div>
-      </section>
+    <section class="section features" aria-labelledby="features-title">
+      <h2 id="features-title" class="section-title reveal">built for the way you actually work.</h2>
+      <div class="feature-grid">
+        <article class="feature-card reveal">
+          <img class="feature-icon" src="assets/framer/microphone.svg" alt="" />
+          <h3>Offline voice dictation</h3>
+          <p>Speak instead of type with the powerful Whisper engine that accelerates AI workflows by letting you speak
+            directly to a model.</p>
+        </article>
+        <article class="feature-card reveal">
+          <img class="feature-icon" src="assets/framer/download.svg" alt="" />
+          <h3>HuggingFace installer</h3>
+          <p>Browse GGUF models on HuggingFace and import them straight into Ollama without touching the command line.
+          </p>
+        </article>
+        <article class="feature-card reveal">
+          <img class="feature-icon" src="assets/framer/file-ocr.svg" alt="" />
+          <h3>Files that models can read</h3>
+          <p>Upload documents and images with built-in OCR and image understanding, so any model can work with what you
+            see.</p>
+        </article>
+        <article class="feature-card reveal">
+          <img class="feature-icon" src="assets/framer/bolt.svg" alt="" />
+          <h3>Real-time streaming</h3>
+          <p>Responses stream token by token from every provider, local or cloud, so you’re never staring at a spinner.
+          </p>
+        </article>
+        <article class="feature-card reveal">
+          <img class="feature-icon" src="assets/framer/sparkles.svg" alt="" />
+          <h3>Smart auto-naming</h3>
+          <p>Chats name themselves as you go. Add custom system prompts per conversation and export everything when you
+            need it.</p>
+        </article>
+        <article class="feature-card reveal">
+          <img class="feature-icon" src="assets/framer/compare.svg" alt="" />
+          <h3>Compare side by side</h3>
+          <p>Run the same prompt across two different models at once and watch both stream in real time.</p>
+        </article>
+      </div>
+    </section>
 
-      <section class="section themes" aria-labelledby="themes-title" data-theme-section>
-        <div class="center-copy reveal">
-          <h2 id="themes-title">pick your theme.</h2>
-          <p>15 different ice cream-themed color schemes, adjustable text sizes, and a wonderfully customizable UI make Vanilla an easy choice.</p>
-          <p>and make your own</p>
+    <section class="section themes" aria-labelledby="themes-title" data-theme-section>
+      <div class="center-copy reveal">
+        <h2 id="themes-title">pick your theme.</h2>
+        <p>15 different ice cream-themed color schemes, adjustable text sizes, and a wonderfully customizable UI make
+          Vanilla an easy choice.</p>
+        <p>and make your own</p>
+      </div>
+      <div class="theme-picker reveal">
+        <div class="theme-selection" aria-live="polite">
+          <span>selected flavor</span>
+          <strong data-selected-theme>Strawberry</strong>
         </div>
-        <div class="theme-picker reveal">
-          <div class="theme-selection" aria-live="polite">
-            <span>selected flavor</span>
-            <strong data-selected-theme>Strawberry</strong>
+        <div class="swatches" aria-label="Choose a preview theme" data-theme-swatches></div>
+      </div>
+    </section>
+
+    <section class="privacy" aria-labelledby="privacy-title">
+      <div class="privacy-inner reveal">
+        <img class="privacy-icon" src="assets/framer/shield-check.svg" alt="" />
+        <h2 id="privacy-title">your data never leaves your machine.</h2>
+        <p>Everything runs locally by default. Cloud providers are strictly opt-in. You maintain full control over your
+          AI workflow, without sacrificing privacy or flexibility.</p>
+      </div>
+    </section>
+
+    <section class="cta" id="waitlist" aria-labelledby="cta-title">
+      <div class="reveal">
+        <h2 id="cta-title">get a scoop.</h2>
+        <form class="waitlist-form" data-waitlist-form>
+          <label class="sr-only" for="waitlist-email">Email address</label>
+          <div class="waitlist-field">
+            <input id="waitlist-email" name="email" type="email" autocomplete="email" inputmode="email"
+              placeholder="you@example.com" required />
+            <button type="submit"><span>join waitlist</span><span aria-hidden="true">→</span></button>
           </div>
-          <div class="swatches" aria-label="Choose a preview theme" data-theme-swatches></div>
-        </div>
-      </section>
+          <p class="waitlist-status" role="status" aria-live="polite" data-waitlist-status></p>
+        </form>
+        <p class="cta-note">100% free of charge. runs on your machine.<br />tested on macOS and Linux.</p>
+      </div>
+    </section>
+  </main>
+</body>
 
-      <section class="privacy" aria-labelledby="privacy-title">
-        <div class="privacy-inner reveal">
-          <img class="privacy-icon" src="assets/framer/shield-check.svg" alt="" />
-          <h2 id="privacy-title">your data never leaves your machine.</h2>
-          <p>Everything runs locally by default. Cloud providers are strictly opt-in. You maintain full control over your AI workflow, without sacrificing privacy or flexibility.</p>
-        </div>
-      </section>
-
-      <section class="cta" id="waitlist" aria-labelledby="cta-title">
-        <div class="reveal">
-          <h2 id="cta-title">get a scoop.</h2>
-          <form class="waitlist-form" data-waitlist-form>
-            <label class="sr-only" for="waitlist-email">Email address</label>
-            <div class="waitlist-field">
-              <input id="waitlist-email" name="email" type="email" autocomplete="email" inputmode="email" placeholder="you@example.com" required />
-              <button type="submit"><span>join waitlist</span><span aria-hidden="true">→</span></button>
-            </div>
-            <p class="waitlist-status" role="status" aria-live="polite" data-waitlist-status></p>
-          </form>
-          <p class="cta-note">100% free of charge. runs on your machine.<br />tested on macOS and Linux.</p>
-        </div>
-      </section>
-    </main>
-  </body>
 </html>

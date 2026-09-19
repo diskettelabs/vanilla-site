@@ -384,8 +384,14 @@ button {
 
 .prompt-control-attach { width: 106px; }
 .prompt-control-tools {
-  width: 108px;
-  padding-inline: 10px;
+  width: 120px;
+  padding-inline: 14px;
+}
+
+.tools-chevron-container {
+  display: flex;
+  align-items: center;
+  gap: 4px;
 }
 
 .prompt-control[data-active="true"] {
@@ -408,7 +414,7 @@ button {
 
 .site-tools-menu {
   position: absolute;
-  left: 227px;
+  left: 239px;
   bottom: 0;
   display: flex;
   gap: 4px;
