@@ -1,0 +1,46 @@
+<!doctype html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1" />
+    <meta name="theme-color" content="#ffffff" />
+    <title>404 - vanilla</title>
+    <meta name="description" content="This page could not be found." />
+    <link rel="icon" type="image/svg+xml" href="assets/app/scoop-outline.svg" />
+    <link rel="apple-touch-icon" href="assets/meta/apple-touch-icon.png" />
+    <link rel="stylesheet" href="styles.css" />
+    <script src="script.js?v=3" defer></script>
+  </head>
+  <body>
+    <a class="skip-link" href="#main">Skip to content</a>
+
+    <header class="site-header" data-header>
+      <a class="brand" href="./" aria-label="Vanilla home">
+        <img class="brand-wordmark" src="assets/app/vanilla-logomark.svg" alt="vanilla." />
+      </a>
+
+      <button class="menu-toggle" type="button" aria-expanded="false" aria-controls="site-actions" data-menu-toggle>
+        <span></span><span></span><span class="sr-only">Toggle menu</span>
+      </button>
+
+      <nav class="header-actions" id="site-actions" aria-label="Primary" data-menu>
+        <a class="pill pill-dark" href="./#waitlist">
+          <img src="assets/app/scoop-outline.svg" alt="" />
+          <span>waitlist</span>
+        </a>
+      </nav>
+    </header>
+
+    <main id="main">
+      <section class="not-found" aria-labelledby="not-found-title">
+        <div class="not-found-inner reveal">
+          <img class="not-found-icon" src="assets/app/scoop-outline.svg" alt="" />
+          <p class="not-found-code">error 404</p>
+          <h1 id="not-found-title">this scoop is missing.</h1>
+          <p class="not-found-copy">The page you’re looking for isn’t here. Maybe it melted, or maybe it was never scooped.</p>
+          <a class="not-found-link" href="./"><span>back to vanilla</span><span aria-hidden="true">→</span></a>
+        </div>
+      </section>
+    </main>
+  </body>
+</html>
