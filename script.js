@@ -54,7 +54,7 @@ const heroStates = [
   ["assets/framer/hero-stream.svg", "stream responses in real-time"],
   ["assets/framer/hero-search.svg", "search across all your conversations"],
   ["assets/framer/hero-grid.svg", "available as a lightweight desktop and web app"],
-  ["assets/framer/hero-code.svg", "completely open source & MIT-licensed"],
+  ["assets/framer/hero-code.svg", "source code available for research & educational putposes"],
 ];
 
 const heroFeature = document.querySelector("[data-hero-feature]");
